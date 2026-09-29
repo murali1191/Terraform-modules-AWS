@@ -1,0 +1,1 @@
+# this is defualt ec2 instance creation via terraform
