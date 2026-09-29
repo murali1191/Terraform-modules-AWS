@@ -1,20 +1,21 @@
 # create variable of instance_type, instance_name and aminame ec2.tf file for the application 
+variable "aminame" {
+  description = "Name of the AMI"
+  type        = string
+  default     = "amzn2-ami-hvm-*"
+}
 
 
+variable "instancetype" {
+  description = "Type of the instance"
+  type        = string
+  default     = "t2.micro"
+}
 
-variable "ec2_instance" {
-  type        = object({
-    region        = string
-    instancetype = string
-    instancename = string
-    aminame       = string
-  })
-  default     = {
-    region        = "us-east-1"
-    instancetype = "t2.micro"
-    instancename = "my-ec2"
-    aminame       = "amzn2-ami-hvm-*--x86_64-gp2"
-  }
+variable "instancename" {
+  description = "Name of the instance"
+  type        = string
+  default     = "1st-server"
 }
 
 

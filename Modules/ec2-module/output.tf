@@ -1,7 +1,7 @@
 
 output "instance_id" {
 
-    value = aws_instance.app_instance.id
+    value = aws_instance.myec2.id
   
 }
 

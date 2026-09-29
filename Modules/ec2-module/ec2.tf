@@ -13,9 +13,8 @@ data "aws_ami" "my-ami" {
 
 resource "aws_instance" "myec2" {    
     
-  ami           = var.aminame
+  ami           = data.aws_ami.my-ami.id
   instance_type = var.instancetype
-  instance_name = var.instancename
 
   tags = {
     Name = var.instancename  
