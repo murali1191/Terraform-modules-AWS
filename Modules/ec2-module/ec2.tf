@@ -1,9 +1,9 @@
 # create ec2 instance for the application with default rules
 # create data source for the amazon owner ami name
 
-data "aws_ami" "app_ami" {
+data "aws_ami" "myami" {
   most_recent = true
-  owners   = "amazon"
+  owners   = ["amazon"]
 
   filter {
     name   = "name"
@@ -11,12 +11,11 @@ data "aws_ami" "app_ami" {
   }
 }
 
-resource "aws_instance" "app_instance" {    
+resource "aws_instance" "myec2" {    
     
   ami           = var.aminame
   instance_type = var.instance_type
   instance_name = var.instance_name
-  security_groups = [aws_security_group.app_sg.name]
 
   tags = {
     Name = "AppInstance"
