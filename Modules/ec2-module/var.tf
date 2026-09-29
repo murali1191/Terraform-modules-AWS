@@ -5,7 +5,7 @@
 variable "aminame" {
   description = "AMI name for the EC2 instance"
   type        = string
-  default     = "amzn2-ami-ecs-hvm*" # Replace with your desired AMI name
+  default     = "amzn2-ami-hvm*" # Replace with your desired AMI name
 }   
 
 variable "instance_type" {
