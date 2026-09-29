@@ -2,5 +2,5 @@
 variable "bucket_name" {
   description = "Name of the S3 bucket"
   type        = string
-  default     = "my-app-bucket"
+  default     = "my-app-bucket-143"
 }   

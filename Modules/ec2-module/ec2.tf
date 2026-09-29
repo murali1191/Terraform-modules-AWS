@@ -3,7 +3,7 @@
 
 data "aws_ami" "myami" {
   most_recent = true
-  owners   = ["amazon"]
+  owner   = ["amazon"]
 
   filter {
     name   = "name"
@@ -18,6 +18,6 @@ resource "aws_instance" "myec2" {
   instance_name = var.instance_name
 
   tags = {
-    Name = "AppInstance"
+    Name = var.instance_name  
   }
 }
