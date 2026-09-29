@@ -2,23 +2,21 @@
 
 
 
-variable "aminame" {
-  description = "AMI name for the EC2 instance"
-  type        = string
-  default     = "amzn2-ami-hvm*" # Replace with your desired AMI name
-}   
-
-variable "instance_type" {
-  description = "Instance type for the EC2 instance"
-  type        = string
-  default     = "t2.micro"
+variable "ec2_instance" {
+  type        = object({
+    region        = string
+    instancetype = string
+    instancename = string
+    aminame       = string
+  })
+  default     = {
+    region        = "us-east-1"
+    instancetype = "t2.micro"
+    instancename = "my-ec2"
+    aminame       = "amzn2-ami-hvm-*--x86_64-gp2"
+  }
 }
 
-variable "instance_name" {
-  description = "Name of the EC2 instance"
-  type        = string
-  default     = "my-ec2"
-}
 
 
 
