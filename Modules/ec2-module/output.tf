@@ -6,4 +6,8 @@ output "instance_id" {
 }
 
 
+output "instance_name" {
 
+    value = aws_instance.myec2.tags["Name"]
+  
+}
